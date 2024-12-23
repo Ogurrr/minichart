@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniChart Example</title>
+    <script src="../main.js"></script>
+</head>
+<body>
+    <canvas id="linear" width="400" height="400"></canvas>
+    <canvas id="PieChart" width="400" height="400"></canvas>
+    <canvas id="ColumnChart" width="400" height="400"></canvas>
+
+    <script>
+        // Tworzymy dane wykresu w formacie JSON
+        const data = [
+            {x: 0, y: 0},
+            {x: 1, y: 1},
+            {x: 2, y: 1},
+            {x: 3, y: 1},
+            {x: 4, y: 5}
+        ];
+
+        // Tworzymy obiekt klasy minichart
+        const canvas = document.getElementById('linear');
+        const chart = new minichart_line(canvas, 400, 400);
+
+        // Rysujemy wykres na podstawie danych JSON
+        chart.setMargin(30)
+        chart.setLineColor("#")
+        chart.toggleLabels(true)
+        chart.draw(data);
+
+        const data1 = [
+            {value: 30, color: '#e74c3c', label: 'Red'}, // Segment czerwony z podpisem
+            {value: 40, color: '#2ecc71', label: 'Green'}, // Segment zielony z podpisem
+            {value: 20, color: '#3498db', label: 'Blue'}, // Segment niebieski z podpisem
+            {value: 10, color: '#f39c12', label: 'Orange'}  // Segment pomarańczowy z podpisem
+        ];
+
+        // Tworzymy obiekt klasy minipiechart
+        const canvas1 = document.getElementById('PieChart');
+        const pieChart = new minichart_pie(canvas1, 150);
+
+        // Rysujemy wykres
+        pieChart.draw(data1);
+
+        const data2 = [
+            {value: 50, color: '#e74c3c', label: 'Red'}, // Słupek czerwony z podpisem
+            {value: 80, color: '#2ecc71', label: 'Green'}, // Słupek zielony z podpisem
+            {value: 120, color: '#3498db', label: 'Blue'}, // Słupek niebieski z podpisem
+            {value: 60, color: '#f39c12', label: 'Yellow'}  // Słupek żółty z podpisem
+        ];
+
+        // Tworzymy obiekt klasy minichart_column
+        const canvas2 = document.getElementById('ColumnChart');
+        const columnChart = new minichart_column(canvas2, 400, 500);
+
+        // Rysujemy wykres
+        columnChart.draw(data2,"inside");
+    </script>
+</body>
+</html>
