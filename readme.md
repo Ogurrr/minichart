@@ -2,7 +2,7 @@
 minichart is a minimalist charting library for JavaScript.
 
 ## Installation
-To add the library to your site, all you need is a link to the Content Delivery Network, e.g. "https://unpkg.com/browse/@ogurrr/minichart@0.0.1/main.js"
+To add the library to your site, all you need is a link to the Content Delivery Network, e.g. "https://unpkg.com/browse/@ogurrr/minichart@0.0.3/main.min.js"
 
 ## Use
 

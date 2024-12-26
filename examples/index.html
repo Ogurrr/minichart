@@ -10,6 +10,8 @@
     <canvas id="linear" width="400" height="400"></canvas>
     <canvas id="PieChart" width="400" height="400"></canvas>
     <canvas id="ColumnChart" width="400" height="400"></canvas>
+    <canvas id="pointChart" width="500" height="500"></canvas>
+    <canvas id="layered" width="500" height="300"></canvas>
 
     <script>
         // Tworzymy dane wykresu w formacie JSON
@@ -26,9 +28,6 @@
         const chart = new minichart_line(canvas, 400, 400);
 
         // Rysujemy wykres na podstawie danych JSON
-        chart.setMargin(30)
-        chart.setLineColor("#")
-        chart.toggleLabels(true)
         chart.draw(data);
 
         const data1 = [
@@ -58,6 +57,28 @@
 
         // Rysujemy wykres
         columnChart.draw(data2,"inside");
+        const canvas3 = document.getElementById('pointChart');
+        const chart3 = new minichart_point(canvas3, 500, 500);
+
+        // Przykładowe dane w formacie JSON
+        const data3 = [
+                {x: 100, y: 900, label: "A", color: "#FF5733"},
+                {x: 200, y: 800, label: "B", color: "#33FF57"},
+                {x: 300, y: 700, label: "C", color: "#3357FF"},
+                {x: 400, y: 600, label: "D", color: "#FFFF33"},
+                {x: 700, y: 500, label: "E", color: "#FF33FF"},
+                {x: 850, y: 100, label: "F", color: "#FF33FF"},
+
+        ];
+
+        // Rysowanie wykresu punktowego
+        chart3.draw(data3, 'above'); // Etykiety będą nad punktami
+        const canvas4 = document.getElementById("layered");
+
+        const chart4 = new minichart_progressbar(canvas4, 300, 500);
+
+        chart4.setProgress(75);
+        chart4.draw();
     </script>
 </body>
 </html>

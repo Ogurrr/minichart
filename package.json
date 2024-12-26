@@ -1,6 +1,6 @@
 {
   "name": "@ogurrr/minichart",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Simple Library to creating charts in javascript",
   "main": "index.js",
   "scripts": {
